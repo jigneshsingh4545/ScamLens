@@ -1,0 +1,1195 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#eef8ef">
+	<meta name="description" content="Scamlens helps you pause, check suspicious messages, links, and emails, and understand common scam signals.">
+	<title>Scamlens | Pause. Check. Carry on.</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="1.css">
+</head>
+<body>
+	<header class="topbar">
+		<a class="wordmark" href="#home" data-view-target="home" aria-label="Scamlens home"><img class="wordmark-icon" src="scamlens-logo.svg" alt=""><span class="wordmark-copy"><strong>scamlens</strong><small>PAUSE · CHECK · CARRY ON</small></span></a>
+		<nav class="site-nav" aria-label="Main navigation">
+			<button type="button" data-view-target="home" class="nav-link active" aria-current="page">Home</button>
+			<button type="button" data-view-target="tools" class="nav-link">Tools</button>
+			<button type="button" data-view-target="community" class="nav-link">Community</button>
+			<button type="button" data-view-target="about" class="nav-link">About Us</button>
+			<button type="button" data-view-target="profile" class="nav-link">Profile</button>
+		</nav>
+		<div class="topbar-controls">
+			<span class="topbar-note"><span class="live-dot" aria-hidden="true"></span> Private, on-device check</span>
+			<label class="senior-toggle" for="senior-mode-toggle"><input id="senior-mode-toggle" type="checkbox"><span class="toggle-track" aria-hidden="true"><span></span></span><span>Senior mode</span></label>
+			<button id="read-aloud-button" class="read-aloud-button" type="button" hidden><span aria-hidden="true">▶</span> Read aloud</button>
+			<button type="button" data-view-target="account" class="header-login">Log in</button>
+		</div>
+	</header>
+
+	<main id="top" class="page-shell">
+		<section class="site-view home-view" id="view-home" aria-labelledby="home-title">
+			<div class="home-hero">
+				<div class="hero-copy">
+					<p class="eyebrow">A CALMER WAY TO CHECK <span> / </span> DIGITAL SAFETY</p>
+					<h1 id="home-title">Pause. Check.<br><em>Carry on.</em></h1>
+					<p class="intro-copy">A suspicious text, email, or link deserves a second look. Choose a quick check to see common warning signs before you respond.</p>
+					<button class="analyze-button hero-button" type="button" data-open-tool="message"><span>Check a message</span><span class="button-arrow" aria-hidden="true">→</span></button>
+				</div>
+				<div class="hero-stamp" aria-hidden="true"><span>THINK</span><b>✳</b><span>THEN CLICK</span></div>
+			</div>
+			<div class="home-tools">
+				<div class="home-tools-heading"><div><p class="step-label">START WITH A CHECK</p><h2>What would you like to look at?</h2></div><button class="text-button" type="button" data-view-target="tools">All tools <span aria-hidden="true">→</span></button></div>
+				<div class="tool-grid">
+					<button class="tool-card" type="button" data-open-tool="url"><span class="tool-card-icon" aria-hidden="true">↗</span><span class="tool-card-number">01 / LINK</span><strong>Check a URL</strong><span>Look for common signs of a suspicious website link.</span><span class="tool-card-arrow" aria-hidden="true">→</span></button>
+					<button class="tool-card" type="button" data-open-tool="message"><span class="tool-card-icon" aria-hidden="true">“</span><span class="tool-card-number">02 / MESSAGE</span><strong>Check a scam message</strong><span>Review a text, DM, or copied message for pressure tactics.</span><span class="tool-card-arrow" aria-hidden="true">→</span></button>
+					<button class="tool-card" type="button" data-open-tool="email"><span class="tool-card-icon" aria-hidden="true">@</span><span class="tool-card-number">03 / EMAIL</span><strong>Check an email</strong><span>Paste an email to inspect its wording and sender details.</span><span class="tool-card-arrow" aria-hidden="true">→</span></button>
+				</div>
+			</div>
+			<section class="why-choose" aria-labelledby="why-choose-title">
+				<div class="why-choose-heading"><p class="eyebrow">WHY SCAMLENS <span> / </span> BUILT FOR CLARITY</p><h2 id="why-choose-title">Useful checks. Honest limits.</h2></div>
+				<div class="trust-points">
+					<article><span class="trust-number">01</span><h3>Private password check</h3><p>Password strength is estimated in your browser. The checker does not submit or save what you type.</p></article>
+					<article><span class="trust-number">02</span><h3>See the reasons</h3><p>Message checks show the phrases and patterns that influenced the result, so you can review the evidence.</p></article>
+					<article><span class="trust-number">03</span><h3>No false certainty</h3><p>Results are educational signals, not identity verification or a guarantee that something is safe or a scam.</p></article>
+				</div>
+			</section>
+			<section class="scam-trends" aria-labelledby="scam-trends-title">
+				<div class="trends-heading">
+					<div><p class="eyebrow">SCAM WATCH <span> / </span> ILLUSTRATIVE DEMO DATA</p><h2 id="scam-trends-title">What’s showing up more?</h2><p>Sample patterns for demonstration only. This is not live or verified reporting.</p></div>
+					<div class="trend-period" role="group" aria-label="Choose demo trend period">
+						<button type="button" class="trend-period-button active" data-trend-period="7" aria-pressed="true">7 days</button>
+						<button type="button" class="trend-period-button" data-trend-period="30" aria-pressed="false">30 days</button>
+					</div>
+				</div>
+				<div class="trends-grid">
+					<section class="heatmap-panel" aria-labelledby="heatmap-title">
+						<div class="trend-panel-heading"><div><p class="step-label">REGIONAL SNAPSHOT</p><h3 id="heatmap-title">Scam activity heatmap</h3></div><span id="heatmap-total" class="trend-total">0 SAMPLE REPORTS</span></div>
+						<div id="scam-heatmap" class="scam-heatmap" role="list" aria-label="Illustrative scam reports by selected Indian states"></div>
+						<div class="heatmap-legend"><span>Fewer reports</span><span class="legend-scale" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span>More reports</span></div>
+						<p class="trend-footnote">Regions are broad demo groupings, not precise locations. Values are fictional.</p>
+					</section>
+					<section class="top-scam-panel" aria-labelledby="top-scam-title">
+						<div class="trend-panel-heading"><div><p class="step-label">MOST COMMON IN THIS SAMPLE</p><h3 id="top-scam-title">Scam types</h3></div><span id="trend-period-label" class="trend-total">7 DAYS</span></div>
+						<ol id="top-scam-list" class="top-scam-list"></ol>
+						<p class="trend-footnote">Top five shown; remaining sample categories are omitted. No live reports or national rankings are connected to this demo.</p>
+					</section>
+				</div>
+			</section>
+			<section class="detective-mode" aria-labelledby="detective-title">
+				<div class="detective-heading">
+					<div><p class="eyebrow">DETECTIVE MODE <span> / </span> FOUR QUICK CASES</p><h2 id="detective-title">Can you spot the tell?</h2><p>Some messages are ordinary. Others are built to rush you.</p></div>
+					<div class="detective-score" aria-live="polite"><strong id="detective-score">0 / 4</strong><span>correct</span></div>
+				</div>
+				<div class="detective-case">
+					<div class="detective-case-meta"><span id="detective-case-number">CASE 01 / 04</span><span class="case-dot" aria-hidden="true">✳</span></div>
+					<p id="detective-sender" class="detective-sender"></p>
+					<blockquote id="detective-message" class="detective-message"></blockquote>
+					<div id="detective-answers" class="detective-answers">
+						<button class="guess-button guess-safe" type="button" data-guess="safe">SAFE</button>
+						<button class="guess-button guess-scam" type="button" data-guess="scam">SCAM</button>
+					</div>
+					<div id="detective-feedback" class="detective-feedback" role="status" aria-live="polite" hidden>
+						<h3 id="detective-result-title"></h3>
+						<p id="detective-explanation"></p>
+						<div id="detective-clues" class="detective-clues"></div>
+					</div>
+					<button id="next-case-button" class="text-button next-case-button" type="button" hidden>Next case <span aria-hidden="true">→</span></button>
+				</div>
+				<p class="detective-note">Practice only: real messages can be spoofed, and no pattern check can guarantee a message is safe.</p>
+			</section>
+			<div class="home-note"><span class="live-dot" aria-hidden="true"></span><p><strong>Private by design.</strong> Checks run in this browser. Your message is not uploaded or saved.</p><span class="home-note-mark" aria-hidden="true">✳</span></div>
+		</section>
+
+		<section class="site-view content-view" id="view-tools" aria-labelledby="tools-title" hidden>
+			<p class="eyebrow">TOOLS <span> / </span> FOUR WAYS TO CHECK</p>
+			<h1 id="tools-title" class="content-title">A second look, <em>made simple.</em></h1>
+			<p class="content-lede">Choose what you received. Each tool looks for common scam patterns and explains what it finds.</p>
+			<div class="tool-grid tools-directory">
+				<button class="tool-card" type="button" data-open-tool="url"><span class="tool-card-icon" aria-hidden="true">↗</span><span class="tool-card-number">01 / LINK</span><strong>Check a URL</strong><span>Inspect a web address for common warning signs such as unusual formatting, unsafe connection, or link shorteners.</span><span class="tool-card-arrow" aria-hidden="true">→</span></button>
+				<button class="tool-card" type="button" data-open-tool="message"><span class="tool-card-icon" aria-hidden="true">“</span><span class="tool-card-number">02 / MESSAGE</span><strong>Check scam messages</strong><span>Review a text, direct message, or other copied note for urgency, threats, and suspicious requests.</span><span class="tool-card-arrow" aria-hidden="true">→</span></button>
+				<button class="tool-card" type="button" data-open-tool="email"><span class="tool-card-icon" aria-hidden="true">@</span><span class="tool-card-number">03 / EMAIL</span><strong>Check an email</strong><span>Paste email text and optionally add the display name or sender address for context.</span><span class="tool-card-arrow" aria-hidden="true">→</span></button>
+				<button class="tool-card" type="button" data-view-target="password"><span class="tool-card-icon" aria-hidden="true">#</span><span class="tool-card-number">04 / PASSWORD</span><strong>Check password strength</strong><span>Get an on-device estimate of length, variety, and common patterns. Your password is not submitted or saved.</span><span class="tool-card-arrow" aria-hidden="true">→</span></button>
+			</div>
+			<button class="learn-card" type="button" data-view-target="learn"><span class="learn-card-icon" aria-hidden="true">i</span><span><span class="tool-card-number">LEARN / PHISHING BASICS</span><strong>Learn to recognize a scam</strong><span>Understand common phishing tactics, what to expect, and how to check a suspicious request.</span></span><span class="learn-card-arrow" aria-hidden="true">→</span></button>
+			<button class="learn-card recovery-card" type="button" data-view-target="recovery"><span class="learn-card-icon" aria-hidden="true">!</span><span><span class="tool-card-number">AFTER A SCAM / NEXT STEPS</span><strong>What to do if you’ve been scammed</strong><span>Follow a step-by-step guide to limit damage, secure accounts, and report what happened.</span></span><span class="learn-card-arrow" aria-hidden="true">→</span></button>
+		</section>
+
+		<section class="site-view content-view password-view" id="view-password" aria-labelledby="password-title" hidden>
+			<button class="text-button learn-back" type="button" data-view-target="tools"><span aria-hidden="true">←</span> Back to tools</button>
+			<p class="eyebrow">PASSWORD TOOL <span> / </span> ON-DEVICE CHECK</p>
+			<h1 id="password-title" class="content-title">A stronger password<br><em>starts with length.</em></h1>
+			<p class="content-lede">Type a password to get a local estimate based on length, character variety, and common patterns. This is not a test against leaked-password databases.</p>
+			<section class="password-checker" aria-label="Password strength checker">
+				<label for="strength-password">Password to check</label>
+				<div class="password-input-wrap">
+					<input id="strength-password" type="password" autocomplete="off" autocapitalize="none" spellcheck="false" maxlength="256" aria-describedby="password-privacy-note password-strength-guidance" placeholder="Type a password to check">
+					<button id="toggle-password-visibility" class="password-visibility" type="button" aria-label="Show password" aria-pressed="false" title="Show password"><span aria-hidden="true">◉</span></button>
+				</div>
+				<div class="strength-readout" aria-live="polite">
+					<div class="strength-label-row"><span id="strength-label">Not checked</span><span id="strength-score"></span></div>
+					<div id="strength-meter" class="strength-meter" role="meter" aria-label="Estimated password strength" aria-valuemin="0" aria-valuemax="8" aria-valuenow="0"><span id="strength-meter-fill"></span></div>
+					<p id="password-strength-guidance" class="strength-guidance">A longer, unique passphrase is usually easier to remember and harder to guess.</p>
+				</div>
+				<ul id="password-checklist" class="password-checklist" aria-label="Password characteristics">
+					<li data-check="length"><span aria-hidden="true">○</span> At least 12 characters</li>
+					<li data-check="variety"><span aria-hidden="true">○</span> Uses multiple character types</li>
+					<li data-check="common"><span aria-hidden="true">○</span> Avoids common password patterns</li>
+				</ul>
+				<fieldset class="personal-password-checks">
+					<legend>Personal details self-check <span>optional</span></legend>
+					<p>We don’t ask you to enter these details. Confirm each one yourself; these checks are not automatic.</p>
+					<label><input type="checkbox" data-personal-check="name" disabled> It doesn’t contain my name or username</label>
+					<label><input type="checkbox" data-personal-check="date" disabled> It doesn’t contain my birthday or an important date</label>
+					<label><input type="checkbox" data-personal-check="pet" disabled> It doesn’t contain a pet or family member’s name</label>
+				</fieldset>
+				<p id="password-privacy-note" class="password-privacy-note"><strong>Private by design:</strong> The check runs in this browser. The password is not sent to a server, stored, or included in analytics. Clear the field when you’re done.</p>
+				<button id="clear-password-button" class="text-button clear-password-button" type="button">Clear password</button>
+			</section>
+			<p class="password-caution">Use a unique password for each account and consider a reputable password manager. This simple estimate cannot know whether a password has appeared in a data breach.</p>
+		</section>
+
+		<section class="site-view content-view learn-view" id="view-learn" aria-labelledby="learn-title" hidden>
+			<button class="text-button learn-back" type="button" data-view-target="tools"><span aria-hidden="true">←</span> Back to tools</button>
+			<p class="eyebrow">LEARN <span> / </span> PHISHING BASICS</p>
+			<h1 id="learn-title" class="content-title">Recognize the hook.<br><em>Choose your next step.</em></h1>
+			<p class="content-lede">Phishing is a deceptive message or call designed to get you to reveal information, send money, or open a harmful link or file. It can arrive by email, text, social media, or phone.</p>
+			<div class="learn-layout">
+				<div class="learn-lessons">
+					<section class="learn-section">
+						<p class="step-label">01 <span>WHAT TO EXPECT</span></p>
+						<h2>It often follows a familiar pattern</h2>
+						<ol class="learn-steps">
+							<li><span>01</span><div><strong>A believable reason to contact you</strong><p>A delivery issue, account alert, invoice, shared document, job offer, or message that appears to come from someone you know.</p></div></li>
+							<li><span>02</span><div><strong>A reason to act or react</strong><p>The sender may introduce a deadline, a threat, a surprise reward, a problem to fix, or a request to keep things secret.</p></div></li>
+							<li><span>03</span><div><strong>A request that benefits the sender</strong><p>You may be asked to open a link or attachment, sign in, share a one-time code, provide personal details, or pay in an unusual way.</p></div></li>
+						</ol>
+					</section>
+					<section class="learn-section learn-signals">
+						<p class="step-label">02 <span>CLUES TO CHECK</span></p>
+						<h2>Look at the whole request</h2>
+						<ul>
+							<li><strong>Sender:</strong> Does the address or number match what you already have on file? Display names can be copied.</li>
+							<li><strong>Link:</strong> Does the real domain match the organization? Don’t open it just to find out; navigate independently instead.</li>
+							<li><strong>Ask:</strong> Is it requesting a password, one-time code, payment, or information it should not need?</li>
+							<li><strong>Pressure:</strong> Is fear, urgency, a reward, or secrecy being used to rush your decision?</li>
+						</ul>
+					</section>
+				</div>
+				<aside class="learn-action">
+					<span class="learn-action-mark" aria-hidden="true">✳</span>
+					<p class="step-label">03 <span>WHAT TO DO</span></p>
+					<h2>Pause, then verify another way.</h2>
+					<p>Don’t reply, click, open an attachment, or share a code while unsure. Contact the person or organization using a number, app, or website you already trust.</p>
+					<p>If you already shared a password or payment details, contact the affected provider or bank directly and change credentials from its official site.</p>
+					<button class="analyze-button" type="button" data-open-tool="message"><span>Check a message</span><span class="button-arrow" aria-hidden="true">→</span></button>
+					<p class="learn-caveat">A clue is not proof. Legitimate messages can look unusual, and convincing scams can look ordinary.</p>
+				</aside>
+			</div>
+		</section>
+
+		<section class="site-view content-view recovery-view" id="view-recovery" aria-labelledby="recovery-title" hidden>
+			<button class="text-button learn-back" type="button" data-view-target="tools"><span aria-hidden="true">←</span> Back to tools</button>
+			<p class="eyebrow">AFTER A SCAM <span> / </span> TAKE THESE STEPS</p>
+			<h1 id="recovery-title" class="content-title">Act quickly.<br><em>You still have options.</em></h1>
+			<p class="content-lede">Start with the steps that fit what happened. You don’t have to handle everything at once.</p>
+			<div class="recovery-layout">
+				<ol class="recovery-steps">
+					<li><span class="recovery-number">01</span><div><h2>Stop contact and don’t pay more</h2><p>Stop replying, sending money, or sharing codes. Don’t trust anyone who promises to recover your money for an upfront fee; that may be another scam.</p></div></li>
+					<li><span class="recovery-number">02</span><div><h2>Contact your bank or payment provider</h2><p>If you sent money or shared payment details, contact the bank, card issuer, payment app, or wire service using its official app or the number on your card. Ask whether they can stop, reverse, or secure the transaction.</p></div></li>
+					<li><span class="recovery-number">03</span><div><h2>Secure affected accounts</h2><p>From the official website or app, change any exposed password and any reused passwords. Turn on multi-factor authentication, sign out other sessions, and contact the account provider if you can’t get in. Never share a one-time code.</p></div></li>
+					<li><span class="recovery-number">04</span><div><h2>Protect your device and identity</h2><p>If you opened an attachment or installed something, disconnect the device from sensitive accounts and run its trusted security tools. If identity details were exposed, contact the relevant government identity or credit-protection service in your country.</p></div></li>
+					<li><span class="recovery-number">05</span><div><h2>Save evidence and report it</h2><p>Keep messages, receipts, transaction IDs, usernames, and dates. Report the incident to the platform involved and your local official fraud or consumer-protection agency. Use contact information you find independently.</p></div></li>
+				</ol>
+				<aside class="recovery-aside">
+					<span class="learn-action-mark" aria-hidden="true">✳</span>
+					<p class="step-label">KEEP IN MIND</p>
+					<h2>You are not alone, and it is not your fault.</h2>
+					<p>Scams are designed to manipulate people. Acting promptly can help limit further harm, but recovery is not always possible and no tool can guarantee an outcome.</p>
+					<div class="recovery-emergency"><strong>Immediate danger?</strong><span>If you are being threatened or are in immediate physical danger, contact emergency services in your area.</span></div>
+					<button class="text-button" type="button" data-view-target="learn">Read phishing basics <span aria-hidden="true">→</span></button>
+				</aside>
+			</div>
+		</section>
+
+		<section class="site-view content-view community-view" id="view-community" aria-labelledby="community-title" hidden>
+			<p class="eyebrow">COMMUNITY <span> / </span> SCAM WATCH</p>
+			<h1 id="community-title" class="content-title">What people are <em>seeing.</em></h1>
+			<p class="content-lede">Share a scam pattern you encountered so others can recognize similar approaches. Posts are anonymous in this demo.</p>
+			<div class="community-notice"><strong>Prototype notice</strong><span>Example reports are fictional. Reports you submit are saved only in this browser and are not shared with other people yet.</span></div>
+			<div class="community-layout">
+				<section class="community-feed" aria-labelledby="community-feed-title">
+					<div class="community-feed-heading"><div><p class="step-label">RECENT REPORTS</p><h2 id="community-feed-title">Patterns worth knowing</h2></div><span id="community-report-count" class="community-report-count"></span></div>
+					<div class="community-filters" role="group" aria-label="Filter reports by contact method">
+						<button type="button" class="community-filter active" data-community-filter="all" aria-pressed="true">All</button>
+						<button type="button" class="community-filter" data-community-filter="Text" aria-pressed="false">Text</button>
+						<button type="button" class="community-filter" data-community-filter="Email" aria-pressed="false">Email</button>
+						<button type="button" class="community-filter" data-community-filter="Call" aria-pressed="false">Call</button>
+						<button type="button" class="community-filter" data-community-filter="Website" aria-pressed="false">Website</button>
+					</div>
+					<div id="community-report-list" class="community-report-list" aria-live="polite"></div>
+				</section>
+				<aside class="community-share" aria-labelledby="community-share-title">
+					<p class="step-label">SHARE A WARNING</p>
+					<h2 id="community-share-title">What happened?</h2>
+					<p class="community-form-intro">A short description of the approach and the clue that made you pause can help someone else.</p>
+					<form id="community-form">
+						<label for="community-channel">How did they contact you?</label>
+						<select id="community-channel" name="channel" required>
+							<option value="Text">Text or messaging app</option>
+							<option value="Email">Email</option>
+							<option value="Call">Phone call</option>
+							<option value="Website">Website or social media</option>
+						</select>
+						<label for="community-title-input">Short title</label>
+						<input id="community-title-input" name="title" type="text" maxlength="70" placeholder="For example: Fake delivery fee" required>
+						<label for="community-story">What was the approach?</label>
+						<textarea id="community-story" name="story" maxlength="500" placeholder="Describe the request and what made you suspicious. Don’t include names, phone numbers, account details, or working links." required></textarea>
+						<p class="community-form-note">Please leave out identifying details, exact contact information, and live links. Your report stays in this browser.</p>
+						<button class="analyze-button community-submit" type="submit"><span>Share report here</span><span class="button-arrow" aria-hidden="true">→</span></button>
+						<p id="community-status" class="community-status" role="status" aria-live="polite"></p>
+					</form>
+				</aside>
+			</div>
+		</section>
+
+		<section class="site-view content-view about-view" id="view-about" aria-labelledby="about-title" hidden>
+			<p class="eyebrow">ABOUT US <span> / </span> WHY WE’RE HERE</p>
+			<h1 id="about-title" class="content-title">Make the next step <em>clearer.</em></h1>
+			<div class="about-layout">
+				<div class="about-copy">
+					<p class="about-lede">Scamlens helps people take a breath and look for clues when a message, email, or link doesn’t feel right.</p>
+					<p>Our goal is to make digital safety easier to act on. We explain common warning patterns in plain language so people can pause, verify, and make an informed next move.</p>
+					<h2>What you can do here</h2>
+					<ul class="about-list">
+						<li><strong>Check a message or email:</strong> See common signs such as urgency, unusual payment requests, threats, or requests for private information.</li>
+						<li><strong>Check a URL:</strong> Look for address patterns that may deserve extra caution, including lookalike spelling and shortened links.</li>
+						<li><strong>Practice and learn:</strong> Use Detective Mode to practice recognizing approaches, or read the phishing guide for a quick overview.</li>
+						<li><strong>Share a warning:</strong> Record a scam pattern in the Community demo. Reports stay in this browser and are not shared with other visitors.</li>
+					</ul>
+					<h2>Privacy and limitations</h2>
+					<p>Checks run in your browser. Scamlens does not contact senders, inspect private accounts, or verify whether a person or organization is genuine. The scores are pattern-based guidance, not a guarantee: a scam may go undetected, and a legitimate message may show a warning sign.</p>
+					<p>When unsure, don’t use links or phone numbers from the message. Reach the organization through its official app, website, or a number you already trust.</p>
+				</div>
+				<aside class="about-promise"><span class="asterisk" aria-hidden="true">✳</span><h2>Our usual work</h2><p>Spot common red flags. Explain why they matter. Encourage people to verify through a trusted, official channel.</p><button class="text-button" type="button" data-open-tool="message">Check a message <span aria-hidden="true">→</span></button></aside>
+			</div>
+		</section>
+
+		<section class="site-view content-view profile-view" id="view-profile" aria-labelledby="profile-title" hidden>
+			<p class="eyebrow">PROFILE <span> / </span> THIS BROWSER</p>
+			<h1 id="profile-title" class="content-title">Your local <em>preferences.</em></h1>
+			<p class="content-lede">No account needed. This profile only reflects your current browser session.</p>
+			<div class="profile-list">
+				<div class="profile-row"><span class="profile-label">Checks this session</span><strong id="session-check-count">0</strong></div>
+				<div class="profile-row"><span class="profile-label">Senior citizen mode</span><strong id="profile-senior-status">Off</strong></div>
+				<div class="profile-row"><span class="profile-label">Message storage</span><strong>Not saved</strong></div>
+			</div>
+			<p class="profile-note">Use the Senior mode switch in the top bar to increase text size and turn on read-aloud controls. Session details clear when this page is closed.</p>
+		</section>
+
+		<section class="site-view account-view" id="view-account" aria-labelledby="account-title" hidden>
+			<div class="account-panel">
+				<a class="account-home-link" href="#home" data-view-target="home">← Back to Scamlens</a>
+				<div class="account-brand-mark" aria-hidden="true">S</div>
+				<p class="eyebrow account-eyebrow">SCAMLENS <span> / </span> YOUR SPACE</p>
+				<h1 id="account-title">Welcome back.</h1>
+				<p class="account-intro">Sign in to your Scamlens account.</p>
+				<div class="account-mode-switch" role="group" aria-label="Choose account access mode">
+					<button type="button" class="account-mode-button active" data-account-mode="login" aria-pressed="true">Log in</button>
+					<button type="button" class="account-mode-button" data-account-mode="signup" aria-pressed="false">Create account</button>
+				</div>
+				<form id="account-form">
+					<div id="account-name-field" class="account-field" hidden><label for="account-name">Name</label><input id="account-name" name="name" type="text" autocomplete="name" placeholder="Your name"></div>
+					<div class="account-field"><label for="account-email">Email</label><input id="account-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></div>
+					<div class="account-field"><label for="account-password">Password</label><input id="account-password" name="password" type="password" autocomplete="current-password" minlength="8" placeholder="At least 8 characters" required></div>
+					<button id="account-submit" class="analyze-button account-submit" type="submit"><span>Log in</span><span class="button-arrow" aria-hidden="true">→</span></button>
+					<p id="account-status" class="account-status" role="status" aria-live="polite"></p>
+				</form>
+				<p class="account-prototype-note"><strong>Prototype only.</strong> Authentication is not connected. This form does not send or save the details you enter.</p>
+			</div>
+		</section>
+
+		<section class="site-view checker-view" id="view-checker" aria-label="Scam checking tool" hidden>
+			<div class="checker-back-row"><button class="text-button" type="button" data-view-target="tools"><span aria-hidden="true">←</span> Back to tools</button><span id="active-tool-label" class="tool-active-label">MESSAGE CHECK</span></div>
+		<section class="intro" aria-labelledby="page-title">
+			<p class="eyebrow">PAUSE BEFORE YOU RESPOND <span> / </span> MESSAGE CHECK</p>
+			<h1 id="page-title">Something feel <em>off?</em></h1>
+			<p class="intro-copy">Paste the message. We’ll point out pressure tactics, suspicious requests, and other common scam signals.</p>
+		</section>
+
+		<div class="workspace">
+			<section class="checker" aria-labelledby="message-heading">
+				<div class="section-heading">
+					<div>
+					<p class="step-label">01 <span>MESSAGE</span></p>
+					<h2 id="message-heading">What did they send you?</h2>
+				</div>
+					<button class="text-button" id="sample-button" type="button">Try a sample <span aria-hidden="true">↗</span></button>
+				</div>
+
+				<form id="analyzer-form">
+					<div id="url-fields" class="url-fields" hidden>
+						<label for="url-input">Website address</label>
+						<input id="url-input" name="url" type="text" inputmode="url" maxlength="2048" placeholder="Paste the full link, e.g. https://example.com" autocomplete="url">
+						<p id="url-error" class="url-error" hidden>Enter a complete website address to check.</p>
+						<p class="sender-note">A familiar-looking link is not proof a site is safe. Avoid opening suspicious links.</p>
+					</div>
+					<div id="message-fields">
+					<label class="visually-hidden" for="message-input">Suspicious message</label>
+					<textarea id="message-input" name="message" maxlength="5000" aria-describedby="message-input-note message-error" placeholder="Paste an email, text, or direct message here…"></textarea>
+					<p id="message-input-note" class="sender-note">Paste the email or message text to analyze. Sender details alone can’t be checked and don’t change the score.</p>
+					<p id="message-error" class="url-error" role="alert" hidden>Paste the email or message text you want checked. Sender details alone are not enough to analyze.</p>
+					<div class="input-meta"><span>Remove personal details before pasting.</span><span id="character-count">0 / 5000</span></div>
+					<details class="sender-details">
+						<summary><span class="plus-icon" aria-hidden="true">+</span> Add sender details <span class="optional">OPTIONAL</span></summary>
+						<div class="sender-fields">
+							<div class="field-group">
+								<label for="sender-name">Sender name</label>
+								<input id="sender-name" name="senderName" type="text" maxlength="120" placeholder="Name shown in the message">
+							</div>
+							<div class="field-group">
+								<label for="sender-address">Email or phone number</label>
+								<input id="sender-address" name="senderAddress" type="text" maxlength="200" placeholder="name@example.com or phone number">
+							</div>
+						</div>
+						<p class="sender-note">Sender details stay in this browser and are extra context only. They are not checked independently and don’t change the score.</p>
+					</details>
+					</div>
+
+					<div class="form-footer">
+						<p class="privacy-note"><span aria-hidden="true">⌑</span> Your message is analyzed locally and never uploaded.</p>
+						<button id="analyze-button" class="analyze-button" type="submit"><span>Check this message</span><span class="button-arrow" aria-hidden="true">→</span></button>
+					</div>
+				</form>
+
+				<section class="results" id="results" aria-live="polite" hidden>
+					<div class="result-rule"></div>
+					<div class="result-topline"><p class="step-label">02 <span>YOUR READOUT</span></p><button id="clear-button" class="icon-button" type="button" aria-label="Clear analysis" title="Clear analysis">×</button></div>
+					<div class="risk-summary">
+						<div class="score-wrap"><span id="score-number" class="score-number">0</span><span class="score-out-of">/ 100</span></div>
+						<div><p id="risk-label" class="risk-label">LOW SIGNAL</p><h2 id="risk-title">No clear scam patterns found</h2><p id="risk-description" class="risk-description"></p></div>
+					</div>
+					<div class="scam-type-readout"><span>LIKELY SCAM TYPE</span><strong id="scam-type-label">No specific type identified</strong><p id="scam-type-note">This is an estimate based on message wording, not a confirmed sender identity.</p></div>
+					<section id="message-comparison" class="message-comparison" aria-labelledby="comparison-title" hidden>
+						<div class="comparison-heading"><div><p class="step-label">A SAFER-STYLE EXAMPLE</p><h3 id="comparison-title">How could a similar notice be worded?</h3></div><span class="comparison-mark" aria-hidden="true">↗</span></div>
+						<blockquote id="comparison-example" class="comparison-example"></blockquote>
+						<p id="comparison-explanation" class="comparison-explanation"></p>
+						<p class="comparison-caveat">This is an illustrative example, not a test of authenticity. Real organizations may word messages differently; verify through a contact method you already trust.</p>
+					</section>
+					<div class="score-track" aria-label="Threat score"><span id="score-fill"></span></div>
+					<div class="result-grid">
+						<section class="evidence-panel" aria-labelledby="evidence-heading">
+							<div class="panel-title-row"><h3 id="evidence-heading">Signals in the message</h3><span id="signal-count" class="count-label">0 FOUND</span></div>
+							<div id="highlighted-message" class="highlighted-message"></div>
+							<ul id="signal-list" class="signal-list"></ul>
+						</section>
+						<section class="dna-panel" aria-labelledby="dna-heading">
+							<div class="panel-title-row"><h3 id="dna-heading">Scam DNA</h3><span class="dna-mark" aria-hidden="true">✳</span></div>
+							<p class="dna-copy">The ingredients that shaped this readout.</p>
+							<div id="dna-list" class="dna-list"></div>
+						</section>
+					</div>
+					<p class="result-disclaimer">This pattern check can miss scams or flag legitimate messages. Verify through a contact method you already trust. Never use links or numbers in a suspicious message.</p>
+				</section>
+				<p id="speech-status" class="visually-hidden" aria-live="polite"></p>
+			</section>
+
+			<aside class="side-notes" aria-label="Safety reminders">
+				<div class="side-index">A NOTE BEFORE YOU BEGIN</div>
+				<p class="side-quote">A real organization won’t mind if you take a moment to <em>check.</em></p>
+				<div class="side-divider"></div>
+				<h2>Keep these close</h2>
+				<ul class="reminder-list">
+					<li><span>01</span><p>Don’t share passwords or one-time codes.</p></li>
+					<li><span>02</span><p>Never pay with gift cards or crypto.</p></li>
+					<li><span>03</span><p>Contact the organization using its official website or app.</p></li>
+				</ul>
+				<div class="side-foot"><span class="asterisk" aria-hidden="true">✳</span> Slow down. Check it out.</div>
+			</aside>
+		</div>
+		</section>
+		<footer class="page-footer"><span>SCAMLENS <span class="footer-dot">·</span> PAUSE · CHECK · CARRY ON</span><span class="footer-contact"><span>Demo Gmail</span> scamspotter@gmail.com <span class="footer-placeholder">(replace with a monitored inbox)</span></span><span class="footer-contact"><span>Sample phone</span> (202) 555-0146</span><span>Scam checks stay on your device.</span></footer>
+	</main>
+
+	<script>
+		const communityStorageKey = 'scam-spotter-community-reports';
+		const communityExamples = [
+			{ id: 'example-text-delivery', channel: 'Text', title: 'Unexpected delivery fee', story: 'A text said my parcel was waiting and asked for a small redelivery payment through a link. I checked the carrier app instead and found no issue.', example: true },
+			{ id: 'example-email-lookalike', channel: 'Email', title: 'Account alert with a lookalike address', story: 'An email claimed my account needed attention. The web address used a number in place of a letter, so I opened the service directly instead of following its link.', example: true },
+			{ id: 'example-call-family', channel: 'Call', title: 'Caller claimed to be a relative', story: 'A caller said they urgently needed money and asked me not to tell anyone. I called my relative back using the number already saved in my contacts.', example: true },
+			{ id: 'example-website-job', channel: 'Website', title: 'Remote job asked for an upfront fee', story: 'A job post promised quick hiring but required payment for training materials before an interview. I checked the company website and could not verify the offer.', example: true }
+		];
+		let communityLocalReports = [];
+		let activeCommunityFilter = 'all';
+
+		function loadCommunityReports() {
+			try {
+				const saved = JSON.parse(localStorage.getItem(communityStorageKey) || '[]');
+				return Array.isArray(saved) ? saved.filter((report) => report && typeof report.title === 'string' && typeof report.story === 'string' && typeof report.channel === 'string') : [];
+			} catch {
+				return communityLocalReports;
+			}
+		}
+
+		function saveCommunityReports(reports) {
+			communityLocalReports = reports;
+			try {
+				localStorage.setItem(communityStorageKey, JSON.stringify(reports));
+				return true;
+			} catch {
+				return false;
+			}
+		}
+
+		function renderCommunityReports() {
+			const list = document.querySelector('#community-report-list');
+			const reports = [...communityExamples, ...loadCommunityReports()].sort((first, second) => (second.createdAt || '').localeCompare(first.createdAt || ''));
+			const visibleReports = activeCommunityFilter === 'all' ? reports : reports.filter((report) => report.channel.toLowerCase() === activeCommunityFilter);
+			list.replaceChildren();
+			document.querySelector('#community-report-count').textContent = `${visibleReports.length} REPORT${visibleReports.length === 1 ? '' : 'S'}`;
+			if (!visibleReports.length) {
+				const empty = document.createElement('p');
+				empty.className = 'community-empty';
+				empty.textContent = 'No reports in this category yet.';
+				list.append(empty);
+				return;
+			}
+			for (const report of visibleReports) {
+				const article = document.createElement('article');
+				article.className = 'community-report';
+				const meta = document.createElement('div');
+				meta.className = 'community-report-meta';
+				const channel = document.createElement('span');
+				channel.textContent = report.channel;
+				const label = document.createElement('span');
+				label.textContent = report.example ? 'Example' : 'Shared on this device';
+				meta.append(channel, label);
+				const title = document.createElement('h3');
+				title.textContent = report.title;
+				const story = document.createElement('p');
+				story.textContent = report.story;
+				article.append(meta, title, story);
+				list.append(article);
+			}
+		}
+
+		document.querySelectorAll('[data-community-filter]').forEach((button) => {
+			button.addEventListener('click', () => {
+				activeCommunityFilter = button.dataset.communityFilter.toLowerCase();
+				document.querySelectorAll('[data-community-filter]').forEach((filter) => {
+					const isActive = filter === button;
+					filter.classList.toggle('active', isActive);
+					filter.setAttribute('aria-pressed', String(isActive));
+				});
+				renderCommunityReports();
+			});
+		});
+
+		document.querySelector('#community-form').addEventListener('submit', (event) => {
+			event.preventDefault();
+			const formData = new FormData(event.currentTarget);
+			const report = {
+				id: `report-${Date.now()}`,
+				channel: String(formData.get('channel')),
+				title: String(formData.get('title')).trim(),
+				story: String(formData.get('story')).trim(),
+				createdAt: new Date().toISOString(),
+				example: false
+			};
+			if (!report.title || !report.story) return;
+			const saved = saveCommunityReports([...loadCommunityReports(), report]);
+			event.currentTarget.reset();
+			activeCommunityFilter = 'all';
+			document.querySelectorAll('[data-community-filter]').forEach((filter) => {
+				const isActive = filter.dataset.communityFilter === 'all';
+				filter.classList.toggle('active', isActive);
+				filter.setAttribute('aria-pressed', String(isActive));
+			});
+			document.querySelector('#community-status').textContent = saved
+				? 'Report added to this browser. It is not visible to other visitors.'
+				: 'Report added for this session only. Browser storage is unavailable.';
+			renderCommunityReports();
+		});
+		renderCommunityReports();
+
+		const trendSnapshots = {
+			7: {
+				regions: [
+					{ name: 'Maharashtra', count: 18 }, { name: 'Gujarat', count: 7 }, { name: 'Karnataka', count: 6 }, { name: 'Tamil Nadu', count: 13 }, { name: 'Telangana', count: 12 },
+					{ name: 'Uttar Pradesh', count: 11 }, { name: 'West Bengal', count: 15 }, { name: 'Rajasthan', count: 9 }, { name: 'Kerala', count: 10 }, { name: 'Bihar', count: 16 }
+				],
+				types: [
+					{ name: 'Bank impersonation', count: 31 }, { name: 'Delivery fee', count: 24 }, { name: 'KYC / identity', count: 19 }, { name: 'Job offer', count: 14 }, { name: 'Lookalike login link', count: 11 }
+				]
+			},
+			30: {
+				regions: [
+					{ name: 'Maharashtra', count: 71 }, { name: 'Gujarat', count: 29 }, { name: 'Karnataka', count: 24 }, { name: 'Tamil Nadu', count: 52 }, { name: 'Telangana', count: 48 },
+					{ name: 'Uttar Pradesh', count: 43 }, { name: 'West Bengal', count: 64 }, { name: 'Rajasthan', count: 37 }, { name: 'Kerala', count: 41 }, { name: 'Bihar', count: 69 }
+				],
+				types: [
+					{ name: 'Bank impersonation', count: 126 }, { name: 'Delivery fee', count: 93 }, { name: 'KYC / identity', count: 78 }, { name: 'Job offer', count: 56 }, { name: 'Lookalike login link', count: 42 }
+				]
+			}
+		};
+
+		function renderScamTrends(period) {
+			const snapshot = trendSnapshots[period];
+			const heatmap = document.querySelector('#scam-heatmap');
+			const scamList = document.querySelector('#top-scam-list');
+			const regionMax = Math.max(...snapshot.regions.map((region) => region.count));
+			const totalReports = snapshot.regions.reduce((total, region) => total + region.count, 0);
+			heatmap.replaceChildren();
+			scamList.replaceChildren();
+			document.querySelector('#heatmap-total').textContent = `${totalReports} SAMPLE REPORTS`;
+			document.querySelector('#trend-period-label').textContent = `${period} DAYS`;
+
+			for (const region of snapshot.regions) {
+				const tile = document.createElement('div');
+				tile.className = 'heatmap-tile';
+				tile.setAttribute('role', 'listitem');
+				tile.dataset.level = String(Math.max(1, Math.ceil((region.count / regionMax) * 5)));
+				tile.setAttribute('aria-label', `${region.name}: ${region.count} fictional reports`);
+				const name = document.createElement('span');
+				name.textContent = region.name;
+				const count = document.createElement('strong');
+				count.textContent = region.count;
+				tile.append(name, count);
+				heatmap.append(tile);
+			}
+
+			const maxTypeCount = Math.max(...snapshot.types.map((type) => type.count));
+			snapshot.types.forEach((type, index) => {
+				const item = document.createElement('li');
+				item.className = 'top-scam-item';
+				const rank = document.createElement('span');
+				rank.className = 'top-scam-rank';
+				rank.textContent = String(index + 1).padStart(2, '0');
+				const detail = document.createElement('div');
+				detail.className = 'top-scam-detail';
+				const label = document.createElement('div');
+				label.className = 'top-scam-label';
+				const name = document.createElement('span');
+				name.textContent = type.name;
+				const share = document.createElement('span');
+				share.textContent = `${Math.round((type.count / totalReports) * 100)}% of sample`;
+				label.append(name, share);
+				const track = document.createElement('div');
+				track.className = 'top-scam-track';
+				const fill = document.createElement('span');
+				fill.style.width = `${(type.count / maxTypeCount) * 100}%`;
+				track.append(fill);
+				detail.append(label, track);
+				const count = document.createElement('strong');
+				count.textContent = type.count;
+				item.append(rank, detail, count);
+				scamList.append(item);
+			});
+		}
+
+		document.querySelectorAll('[data-trend-period]').forEach((button) => {
+			button.addEventListener('click', () => {
+				document.querySelectorAll('[data-trend-period]').forEach((periodButton) => {
+					const selected = periodButton === button;
+					periodButton.classList.toggle('active', selected);
+					periodButton.setAttribute('aria-pressed', String(selected));
+				});
+				renderScamTrends(Number(button.dataset.trendPeriod));
+			});
+		});
+		renderScamTrends(7);
+
+		const accountForm = document.querySelector('#account-form');
+		let accountMode = 'login';
+
+		document.querySelectorAll('[data-account-mode]').forEach((button) => {
+			button.addEventListener('click', () => {
+				accountMode = button.dataset.accountMode;
+				const isSignup = accountMode === 'signup';
+				const nameField = document.querySelector('#account-name-field');
+				nameField.hidden = !isSignup;
+				nameField.querySelector('input').required = isSignup;
+				document.querySelector('#account-title').textContent = isSignup ? 'Create your account.' : 'Welcome back.';
+				document.querySelector('.account-intro').textContent = isSignup ? 'Set up your Scamlens profile.' : 'Sign in to your Scamlens account.';
+				document.querySelector('#account-submit span:first-child').textContent = isSignup ? 'Create account' : 'Log in';
+				document.querySelector('#account-password').autocomplete = isSignup ? 'new-password' : 'current-password';
+				document.querySelector('#account-status').textContent = '';
+				document.querySelectorAll('[data-account-mode]').forEach((modeButton) => {
+					const selected = modeButton === button;
+					modeButton.classList.toggle('active', selected);
+					modeButton.setAttribute('aria-pressed', String(selected));
+				});
+			});
+		});
+
+		accountForm.addEventListener('submit', (event) => {
+			event.preventDefault();
+			document.querySelector('#account-status').textContent = 'Sign-in is not connected in this prototype. No information was sent or saved.';
+		});
+
+		const strengthPassword = document.querySelector('#strength-password');
+		const passwordMeter = document.querySelector('#strength-meter');
+		const passwordMeterFill = document.querySelector('#strength-meter-fill');
+		const passwordStrengthLabel = document.querySelector('#strength-label');
+		const passwordStrengthScore = document.querySelector('#strength-score');
+		const passwordStrengthGuidance = document.querySelector('#password-strength-guidance');
+		const personalPasswordChecks = [...document.querySelectorAll('[data-personal-check]')];
+		const commonPasswordPatterns = new Set(['password', 'password1', 'password123', 'qwerty', 'qwerty123', 'letmein', 'welcome', 'admin', 'iloveyou', 'abc123', '123456', '12345678']);
+		const sequencePattern = /(?:0123|1234|2345|3456|4567|5678|6789|abcd|bcde|cdef|defg|efgh|fghi|ghij|hijk|ijkl|jklm|klmn|lmno|mnop|nopq|opqr|pqrs|qrst|rstu|stuv|tuvw|uvwx|vwxy|wxyz|qwerty|asdf)/i;
+
+		function evaluatePasswordStrength(password) {
+			if (!password) {
+				passwordStrengthLabel.textContent = 'Not checked';
+				passwordStrengthScore.textContent = '';
+				passwordStrengthGuidance.textContent = 'A longer, unique passphrase is usually easier to remember and harder to guess.';
+				passwordMeter.setAttribute('aria-valuenow', '0');
+				passwordMeter.dataset.level = 'empty';
+				passwordMeterFill.style.width = '0%';
+				personalPasswordChecks.forEach((check) => {
+					check.checked = false;
+					check.disabled = true;
+				});
+				document.querySelectorAll('#password-checklist li').forEach((item) => {
+					item.dataset.passed = 'pending';
+					item.querySelector('span').textContent = '○';
+				});
+				return;
+			}
+
+			const lowerPassword = password.toLowerCase();
+			personalPasswordChecks.forEach((check) => { check.disabled = false; });
+			const characterTypes = [/[a-z]/.test(password), /[A-Z]/.test(password), /\d/.test(password), /[^a-zA-Z0-9]/.test(password)].filter(Boolean).length;
+			const commonPattern = commonPasswordPatterns.has(lowerPassword) || sequencePattern.test(password) || /(.)\1{2,}/.test(password);
+			const checks = {
+				length: password.length >= 12,
+				variety: characterTypes >= 3,
+				common: !commonPattern
+			};
+			let score = 0;
+			if (password.length >= 8) score += 1;
+			if (password.length >= 12) score += 1;
+			if (password.length >= 16) score += 1;
+			if (characterTypes >= 3) score += 1;
+			if (!commonPattern) score += 1;
+			const personalChecksPassed = personalPasswordChecks.filter((check) => check.checked).length;
+			score += personalChecksPassed;
+			const level = score <= 2 ? 'weak' : score <= 4 ? 'fair' : score <= 7 ? 'good' : 'strong';
+			const guidance = {
+				weak: 'Try a much longer passphrase and avoid familiar words, repeated characters, or sequences.',
+				fair: 'Add more length and variety, and avoid reusing this password on another account.',
+				good: personalChecksPassed < personalPasswordChecks.length ? 'This looks harder to guess by these simple checks. Review the optional personal-detail checks to complete the estimate.' : 'This looks harder to guess by these simple checks. Make sure it is unique to one account.',
+				strong: 'Strong estimate by these simple checks and your personal-detail confirmations. Keep it unique and store it in a reputable password manager.'
+			};
+			passwordStrengthLabel.textContent = `${level[0].toUpperCase()}${level.slice(1)} estimate`;
+			passwordStrengthScore.textContent = `${score} / 8`;
+			passwordStrengthGuidance.textContent = guidance[level];
+			passwordMeter.setAttribute('aria-valuenow', String(score));
+			passwordMeter.dataset.level = level;
+			passwordMeterFill.style.width = `${score * 12.5}%`;
+			Object.entries(checks).forEach(([name, passed]) => {
+				const item = document.querySelector(`#password-checklist [data-check="${name}"]`);
+				item.dataset.passed = String(passed);
+				item.querySelector('span').textContent = passed ? '✓' : '○';
+			});
+		}
+
+		function clearPasswordStrength() {
+			strengthPassword.value = '';
+			evaluatePasswordStrength('');
+			strengthPassword.type = 'password';
+			document.querySelector('#toggle-password-visibility').setAttribute('aria-pressed', 'false');
+			document.querySelector('#toggle-password-visibility').setAttribute('aria-label', 'Show password');
+			document.querySelector('#toggle-password-visibility').title = 'Show password';
+		}
+
+		strengthPassword.addEventListener('input', () => {
+			personalPasswordChecks.forEach((check) => { check.checked = false; });
+			evaluatePasswordStrength(strengthPassword.value);
+		});
+		personalPasswordChecks.forEach((check) => check.addEventListener('change', () => evaluatePasswordStrength(strengthPassword.value)));
+		document.querySelector('#toggle-password-visibility').addEventListener('click', (event) => {
+			const button = event.currentTarget;
+			const showPassword = strengthPassword.type === 'password';
+			strengthPassword.type = showPassword ? 'text' : 'password';
+			button.setAttribute('aria-pressed', String(showPassword));
+			button.setAttribute('aria-label', showPassword ? 'Hide password' : 'Show password');
+			button.title = showPassword ? 'Hide password' : 'Show password';
+			strengthPassword.focus();
+		});
+		document.querySelector('#clear-password-button').addEventListener('click', () => {
+			clearPasswordStrength();
+			strengthPassword.focus();
+		});
+
+		const signalRules = [
+			{ id: 'urgency', label: 'Urgency & pressure', points: 20, terms: ['act now', 'immediately', 'urgent', 'within 24 hours', 'expires today', 'final warning', 'right away', 'limited time', 'suspended today', 'account will be closed'], explanation: 'Pressure to act quickly can stop you from checking the facts.' },
+			{ id: 'credentials', label: 'Sensitive information', points: 25, terms: ['password', 'one-time code', 'verification code', 'security code', 'social security', 'ssn', 'confirm your identity', 'verify your account', 'login details', 'bank details'], explanation: 'Requests for passwords, codes, or identity details are a serious warning sign.' },
+			{ id: 'payment', label: 'Payment request', points: 25, terms: ['gift card', 'wire transfer', 'crypto', 'cryptocurrency', 'bitcoin', 'pay a fee', 'payment required', 'send money', 'cash app', 'zelle', 'refund fee'], explanation: 'Unusual payment methods are commonly used because they are hard to reverse.' },
+			{ id: 'impersonation', label: 'Possible impersonation', points: 18, terms: ['your bank', 'irs', 'tax department', 'tech support', 'customer support', 'account security', 'fraud department', 'police department', 'delivery company', 'microsoft support', 'amazon support'], explanation: 'Scammers may borrow a familiar organization’s name to sound legitimate.' },
+			{ id: 'reward', label: 'Unexpected reward', points: 16, terms: ['you have won', 'you won', 'claim your prize', 'claim your reward', 'free gift', 'congratulations', 'you were selected', 'claim now', 'lottery'], explanation: 'Surprise prizes can be bait to collect information or upfront fees.' },
+			{ id: 'threat', label: 'Threat or consequence', points: 20, terms: ['warrant', 'arrest', 'legal action', 'account locked', 'account suspended', 'you will be prosecuted', 'service will be disconnected', 'penalty', 'your package will be returned'], explanation: 'Threats and fear are often used to rush people into taking action.' }
+		];
+		const linkPattern = /(?:https?:\/\/|www\.)[^\s<>()]+/gi;
+		const form = document.querySelector('#analyzer-form');
+		const messageInput = document.querySelector('#message-input');
+		const urlInput = document.querySelector('#url-input');
+		const results = document.querySelector('#results');
+		const seniorModeToggle = document.querySelector('#senior-mode-toggle');
+		const readAloudButton = document.querySelector('#read-aloud-button');
+		const speechStatus = document.querySelector('#speech-status');
+		let activeUtterance = null;
+		let selectedTool = 'message';
+		let sessionCheckCount = 0;
+		const detectiveCasePool = [
+			{ sender: 'Mina · pottery class group', message: 'The studio moved Thursday’s 6:30 class to Room B this week. I’ll bring the glaze samples we talked about.', answer: 'safe', explanation: 'This gives specific shared context and asks for nothing sensitive, urgent, or financial. A familiar name can still be spoofed, so check another way if the change is unexpected.', clues: ['Specific shared context', 'No link or payment', 'No pressure'] },
+			{ sender: 'Riverview Library · text alert', message: 'The book you requested is ready through Friday. You can check pickup details in the library app or at the front desk.', answer: 'safe', explanation: 'The notice gives a routine service update and directs you to an app or desk you already know instead of asking you to follow a message link.', clues: ['Routine update', 'Known channel suggested', 'No private information requested'] },
+			{ sender: 'Northside Market · receipt alert', message: 'Your receipt from today’s visit is available in your account. Open the store app whenever convenient to view it.', answer: 'safe', explanation: 'It refers to a recent, recognizable event, has no countdown, and asks you to open the app yourself rather than click a link in the text.', clues: ['Expected activity', 'No message link', 'No urgency'] },
+			{ sender: 'Sam · volunteer team', message: 'I put the revised Saturday rota in our usual shared folder. Your shift is still 10 to 12; we can talk through the swap at the meeting.', answer: 'safe', explanation: 'This fits an ongoing conversation and leaves the decision for a normal meeting. It does not ask you to sign in through a new link or send private details.', clues: ['Ongoing work context', 'No new sign-in link', 'No demand to act now'] },
+			{ sender: 'Utilities account notice', message: 'Your monthly water statement is available. To review it, open the utility app you normally use or type the provider’s address yourself.', answer: 'safe', explanation: 'Although account notices can be impersonated, this sample avoids a link and suggests reaching the provider through a familiar route.', clues: ['Common account notice', 'No embedded link', 'Independent verification suggested'] },
+			{ sender: 'Avery · project group', message: 'I added the revised agenda to our shared calendar invite. The 2 pm planning meeting is still in Conference Room 3.', answer: 'safe', explanation: 'The message gives ordinary meeting details and points to an existing shared calendar rather than asking for credentials, money, or urgent action.', clues: ['Consistent meeting details', 'Existing shared tool', 'No sensitive request'] },
+			{ sender: 'Delivery update · unknown number', message: 'The driver could not leave your parcel because the unit number is missing. Add it here before tonight’s route closes: delivery-details.example/update', answer: 'scam', explanation: 'A plausible delivery problem is paired with an unexpected link and a deadline. Check tracking in the carrier app or using a website address you already know.', clues: ['Unexpected link', 'Deadline pressure', 'Delivery pretext'] },
+			{ sender: 'Shared file · display name “Avery”', message: 'Avery shared “Quarterly schedule.” View the file before 4 pm so the team can finalize coverage: team-docs.example/view', answer: 'scam', explanation: 'A familiar display name and work-sounding file can be copied. The unfamiliar sign-in link and deadline are reasons to check with Avery through your usual work channel.', clues: ['Unfamiliar sign-in link', 'Deadline', 'Sender identity not verified'] },
+			{ sender: 'Payroll desk · text message', message: 'A direct-deposit change is waiting for review. If you did not request it, reply with your employee number so we can stop the change today.', answer: 'scam', explanation: 'A payroll issue may sound routine, but this message asks for identifying information over text and adds pressure. Contact payroll using your employer’s known directory.', clues: ['Requests identifying details', 'Unexpected payroll change', 'Pressure to reply'] },
+			{ sender: '“Casey” · new number', message: 'Hey, my old phone stopped working. Can you cover the $86 booking deposit for me? I’ll pay you back tomorrow; please use this number for now.', answer: 'scam', explanation: 'The personal tone is designed to feel familiar, but a new number plus a money request should be verified by calling the person using a saved number.', clues: ['New number claim', 'Money request', 'Identity needs verification'] },
+			{ sender: 'Road account notice · unknown sender', message: 'A toll balance of $4.20 is still open. Pay before midnight to avoid an added charge: road-billing.example/pay', answer: 'scam', explanation: 'Small balances can make a payment request feel believable. The countdown and unexpected payment link are the key clues; check directly with the toll provider.', clues: ['Small unexpected balance', 'Midnight deadline', 'Payment link'] },
+			{ sender: 'Cloud storage alert · email', message: 'Your storage payment could not be processed. Your files may be removed tonight. Restore access and update your card here: account-storage.example/restore', answer: 'scam', explanation: 'The threat of losing files creates urgency, and the message asks you to enter payment details through a link. Open the storage service directly instead.', clues: ['Threat of losing files', 'Payment details requested', 'Link in unexpected message'] },
+			{ sender: 'PayPal account notice · email', message: 'A payment needs your review. Sign in to paypa1-security.example/confirm before your account is limited.', answer: 'scam', explanation: 'The domain spells “paypa1” with the number 1 instead of the letter l. That small character swap can make a fake address look familiar. Do not use the link; open the official app or type the address you already know.', clues: ['1 substituted for l', 'Lookalike domain', 'Account pressure'] },
+			{ sender: 'Apple ID support · text', message: 'Your Apple ID needs attention. Review the alert at 4pple-id.example/check to keep your account active.', answer: 'scam', explanation: 'The domain begins with “4pple” using the number 4 instead of the letter A. Check the exact web address and verify through the official app or a trusted address, not this message link.', clues: ['4 substituted for A', 'Lookalike domain', 'Unexpected account alert'] }
+		];
+		let detectiveCases = [];
+		let detectiveCaseIndex = 0;
+		let detectiveCorrectCount = 0;
+		let detectiveAnswered = false;
+
+		function shuffleCases(cases) {
+			const shuffled = [...cases];
+			for (let index = shuffled.length - 1; index > 0; index -= 1) {
+				const swapIndex = Math.floor(Math.random() * (index + 1));
+				[shuffled[index], shuffled[swapIndex]] = [shuffled[swapIndex], shuffled[index]];
+			}
+			return shuffled;
+		}
+
+		function createDetectiveRound() {
+			const safeCases = shuffleCases(detectiveCasePool.filter((example) => example.answer === 'safe')).slice(0, 2);
+			const scamCases = shuffleCases(detectiveCasePool.filter((example) => example.answer === 'scam')).slice(0, 2);
+			detectiveCases = shuffleCases([...safeCases, ...scamCases]);
+			detectiveCaseIndex = 0;
+			detectiveCorrectCount = 0;
+		}
+
+		function renderDetectiveCase() {
+			const currentCase = detectiveCases[detectiveCaseIndex];
+			detectiveAnswered = false;
+			document.querySelector('#detective-case-number').textContent = `CASE ${String(detectiveCaseIndex + 1).padStart(2, '0')} / ${String(detectiveCases.length).padStart(2, '0')}`;
+			document.querySelector('#detective-score').textContent = `${detectiveCorrectCount} / ${detectiveCases.length}`;
+			document.querySelector('#detective-sender').textContent = currentCase.sender;
+			document.querySelector('#detective-message').textContent = currentCase.message;
+			document.querySelector('#detective-feedback').hidden = true;
+			document.querySelector('#detective-answers').hidden = false;
+			document.querySelector('#next-case-button').hidden = true;
+			document.querySelector('#next-case-button').textContent = detectiveCaseIndex === detectiveCases.length - 1 ? 'Play again' : 'Next case';
+			document.querySelectorAll('[data-guess]').forEach((button) => { button.disabled = false; });
+		}
+
+		document.querySelectorAll('[data-guess]').forEach((button) => {
+			button.addEventListener('click', () => {
+				if (detectiveAnswered) return;
+				detectiveAnswered = true;
+				const currentCase = detectiveCases[detectiveCaseIndex];
+				const isCorrect = button.dataset.guess === currentCase.answer;
+				if (isCorrect) detectiveCorrectCount += 1;
+				document.querySelector('#detective-score').textContent = `${detectiveCorrectCount} / ${detectiveCases.length}`;
+				document.querySelector('#detective-result-title').textContent = isCorrect ? 'Good read.' : `This one was ${currentCase.answer.toUpperCase()}.`;
+				document.querySelector('#detective-explanation').textContent = currentCase.explanation;
+				const clues = document.querySelector('#detective-clues');
+				clues.replaceChildren();
+				currentCase.clues.forEach((clue) => {
+					const clueTag = document.createElement('span');
+					clueTag.textContent = clue;
+					clues.append(clueTag);
+				});
+				document.querySelector('#detective-feedback').dataset.correct = isCorrect;
+				document.querySelector('#detective-feedback').hidden = false;
+				document.querySelector('#detective-answers').hidden = true;
+				document.querySelector('#next-case-button').hidden = false;
+			});
+		});
+
+		document.querySelector('#next-case-button').addEventListener('click', () => {
+			if (detectiveCaseIndex === detectiveCases.length - 1) {
+				createDetectiveRound();
+			} else {
+				detectiveCaseIndex += 1;
+			}
+			renderDetectiveCase();
+		});
+		createDetectiveRound();
+		renderDetectiveCase();
+
+		function showView(viewName) {
+			if (document.body.classList.contains('senior-mode') && ['password', 'learn', 'community', 'about', 'profile', 'account'].includes(viewName)) {
+				viewName = 'home';
+			}
+			if (viewName !== 'password') clearPasswordStrength();
+			document.querySelectorAll('.site-view').forEach((view) => {
+				view.hidden = view.id !== `view-${viewName}`;
+			});
+			document.querySelectorAll('.site-nav [data-view-target]').forEach((link) => {
+				const isActive = link.dataset.viewTarget === viewName || (['learn', 'recovery', 'password'].includes(viewName) && link.dataset.viewTarget === 'tools');
+				link.classList.toggle('active', isActive);
+				if (isActive) link.setAttribute('aria-current', 'page');
+				else link.removeAttribute('aria-current');
+			});
+			if (viewName === 'profile') updateProfile();
+			window.scrollTo({ top: 0, behavior: 'smooth' });
+		}
+
+		function openTool(toolName) {
+			selectedTool = toolName;
+			const isUrl = toolName === 'url';
+			const isEmail = toolName === 'email';
+			const toolLabel = isUrl ? 'URL' : isEmail ? 'EMAIL' : 'MESSAGE';
+			document.querySelector('#url-fields').hidden = !isUrl;
+			document.querySelector('#message-fields').hidden = isUrl;
+			messageInput.required = false;
+			urlInput.required = isUrl;
+			document.querySelector('#active-tool-label').textContent = `${toolLabel} CHECK`;
+			document.querySelector('#page-title').textContent = isUrl ? 'Check a suspicious URL' : isEmail ? 'Check an email for red flags' : 'Something feel off?';
+			document.querySelector('.checker-view .intro .eyebrow').innerHTML = `PAUSE BEFORE YOU RESPOND <span> / </span> ${toolLabel} CHECK`;
+			document.querySelector('.checker-view .intro-copy').textContent = isUrl ? 'Paste a website address to look for common link warning signs before opening it.' : isEmail ? 'Paste the email text and we’ll point out pressure tactics, suspicious requests, and other common scam signals.' : 'Paste the message. We’ll point out pressure tactics, suspicious requests, and other common scam signals.';
+			document.querySelector('.section-heading .step-label span').textContent = toolLabel;
+			document.querySelector('#message-heading').textContent = isUrl ? 'Where does this link go?' : isEmail ? 'What did this email say?' : 'What did they send you?';
+			document.querySelector('#message-input').placeholder = isEmail ? 'Paste the email text here, including its subject if available…' : 'Paste an email, text, or direct message here…';
+			document.querySelector('#analyze-button span:first-child').textContent = isUrl ? 'Check this URL' : isEmail ? 'Check this email' : 'Check this message';
+			document.querySelector('#evidence-heading').textContent = isUrl ? 'Signals in the URL' : isEmail ? 'Signals in the email' : 'Signals in the message';
+			document.querySelector('.privacy-note').lastChild.textContent = ' Your message is analyzed locally and never uploaded.';
+			document.querySelector('#sample-button').hidden = isUrl;
+			document.querySelector('#url-error').hidden = true;
+			results.hidden = true;
+			showView('checker');
+			(isUrl ? urlInput : messageInput).focus({ preventScroll: true });
+		}
+
+		function updateProfile() {
+			document.querySelector('#session-check-count').textContent = sessionCheckCount;
+			document.querySelector('#profile-senior-status').textContent = seniorModeToggle.checked ? 'On' : 'Off';
+		}
+
+		document.querySelectorAll('[data-view-target]').forEach((control) => {
+			control.addEventListener('click', (event) => {
+				event.preventDefault();
+				showView(control.dataset.viewTarget);
+			});
+		});
+		document.querySelectorAll('[data-open-tool]').forEach((control) => {
+			control.addEventListener('click', () => openTool(control.dataset.openTool));
+		});
+
+		seniorModeToggle.addEventListener('change', () => {
+			document.body.classList.toggle('senior-mode', seniorModeToggle.checked);
+			readAloudButton.hidden = !seniorModeToggle.checked;
+			if (seniorModeToggle.checked && ['view-password', 'view-learn', 'view-community', 'view-about', 'view-profile', 'view-account'].includes(document.querySelector('.site-view:not([hidden])')?.id)) {
+				showView('home');
+			}
+			if (!document.querySelector('#view-profile').hidden) updateProfile();
+			if (!seniorModeToggle.checked && window.speechSynthesis?.speaking) {
+				window.speechSynthesis.cancel();
+				resetReadAloudButton();
+			}
+		});
+
+		readAloudButton.addEventListener('click', () => {
+			if (!('speechSynthesis' in window) || !('SpeechSynthesisUtterance' in window)) {
+				speechStatus.textContent = 'Read aloud is not supported by this browser.';
+				return;
+			}
+			if (window.speechSynthesis.speaking) {
+				window.speechSynthesis.cancel();
+				resetReadAloudButton();
+				speechStatus.textContent = 'Reading stopped.';
+				return;
+			}
+			const activeView = document.querySelector('.site-view:not([hidden])');
+			const isChecker = activeView?.id === 'view-checker';
+			const message = selectedTool === 'url' ? urlInput.value.trim() : messageInput.value.trim();
+			const itemType = selectedTool === 'url' ? 'URL' : selectedTool === 'email' ? 'Email' : 'Message';
+			const pageText = activeView?.innerText.replace(/\s+/g, ' ').trim() || 'Scamlens.';
+			const spokenText = isChecker && !results.hidden
+				? `${itemType}. ${message}. Risk level: ${document.querySelector('#risk-label').textContent}. Likely scam type: ${document.querySelector('#scam-type-label').textContent}. ${document.querySelector('#risk-title').textContent}. ${document.querySelector('#risk-description').textContent}. ${document.querySelector('#message-comparison').hidden ? '' : `A safer-style example: ${document.querySelector('#comparison-example').textContent}. ${document.querySelector('#comparison-explanation').textContent}.` } ${[...document.querySelectorAll('#signal-list li strong')].map((item) => item.textContent).join('. ')}. Scam DNA: ${[...document.querySelectorAll('.dna-row-label span:first-child')].map((item) => item.textContent).join(', ')}.`
+				: isChecker && message
+					? `${itemType} to check. ${message}`
+					: pageText;
+			activeUtterance = new SpeechSynthesisUtterance(spokenText);
+			activeUtterance.onend = resetReadAloudButton;
+			activeUtterance.onerror = resetReadAloudButton;
+			window.speechSynthesis.speak(activeUtterance);
+			readAloudButton.innerHTML = '<span aria-hidden="true">■</span> Stop reading';
+			speechStatus.textContent = 'Reading aloud.';
+		});
+
+		function resetReadAloudButton() {
+			activeUtterance = null;
+			readAloudButton.innerHTML = '<span aria-hidden="true">▶</span> Read aloud';
+		}
+
+		document.querySelector('#sample-button').addEventListener('click', () => {
+			messageInput.value = 'FINAL WARNING: Your bank account will be suspended today. Verify your account immediately at http://secure-bank.example/verify and confirm your password to avoid legal action.';
+			messageInput.dispatchEvent(new Event('input'));
+			messageInput.focus();
+		});
+
+		messageInput.addEventListener('input', () => {
+			document.querySelector('#character-count').textContent = `${messageInput.value.length} / 5000`;
+			if (messageInput.value.trim()) document.querySelector('#message-error').hidden = true;
+		});
+		urlInput.addEventListener('input', () => { document.querySelector('#url-error').hidden = true; });
+
+		form.addEventListener('submit', (event) => {
+			event.preventDefault();
+			const message = selectedTool === 'url' ? urlInput.value.trim() : messageInput.value.trim();
+			if (!message) {
+				if (selectedTool === 'url') {
+					document.querySelector('#url-error').hidden = false;
+					urlInput.focus();
+				} else {
+					document.querySelector('#message-error').hidden = false;
+					messageInput.focus();
+				}
+				return;
+			}
+			document.querySelector('#message-error').hidden = true;
+			let findings;
+			if (selectedTool === 'url') {
+				let parsedUrl;
+				try {
+					parsedUrl = new URL(/^https?:\/\//i.test(message) ? message : `https://${message}`);
+				} catch {
+					document.querySelector('#url-error').hidden = false;
+					urlInput.focus();
+					return;
+				}
+				findings = getUrlFindings(message, parsedUrl);
+			} else {
+				const lowerMessage = message.toLowerCase();
+				findings = signalRules.map((rule) => ({
+					...rule,
+					matches: rule.terms.filter((term) => lowerMessage.includes(term))
+				})).filter((rule) => rule.matches.length > 0);
+				const links = [...message.matchAll(linkPattern)].map((match) => match[0].replace(/[.,!?;:]+$/, ''));
+				if (links.length) findings.push({ id: 'links', label: 'Unexpected link', points: 15, terms: [...new Set(links)], matches: [...new Set(links)], explanation: 'Links in unexpected messages can lead to fake sign-in pages or downloads.' });
+			}
+			const score = Math.min(100, findings.reduce((total, finding) => total + finding.points, 0));
+			const scamType = classifyScamType(message, findings);
+			const comparison = createMessageComparison(scamType.label);
+			const risk = score >= 70
+				? { label: 'HIGH RISK', title: 'Several strong warning signs', description: 'Don’t reply, click links, or share information. Verify the claim using an official contact method.' }
+				: score >= 40
+					? { label: 'CAUTION', title: 'Multiple warning signs found', description: 'Pause before taking action. Check the sender through a contact method you already trust.' }
+					: score > 0
+						? { label: 'LOWER RISK', title: 'Some suspicious signals found', description: 'This is not proof of a scam, but it’s worth verifying before you respond.' }
+						: { label: 'LOW SIGNAL', title: 'No clear scam patterns found', description: 'That doesn’t guarantee it’s safe. Unexpected messages can still be scams.' };
+
+			document.querySelector('#score-number').textContent = score;
+			document.querySelector('#risk-label').textContent = risk.label;
+			document.querySelector('#risk-title').textContent = risk.title;
+			document.querySelector('#risk-description').textContent = risk.description;
+			document.querySelector('#scam-type-label').textContent = scamType.label;
+			document.querySelector('#scam-type-note').textContent = scamType.note;
+			document.querySelector('#comparison-example').textContent = comparison.example;
+			document.querySelector('#comparison-explanation').textContent = comparison.explanation;
+			document.querySelector('#message-comparison').hidden = selectedTool === 'url';
+			document.querySelector('#score-fill').style.width = `${score}%`;
+			document.querySelector('.risk-summary').dataset.level = score >= 70 ? 'high' : score >= 40 ? 'caution' : score > 0 ? 'some' : 'low';
+			document.querySelector('#signal-count').textContent = `${findings.length} FOUND`;
+			renderHighlightedMessage(message, findings.flatMap((finding) => finding.matches));
+			renderSignals(findings);
+			renderDna(findings);
+			const senderName = document.querySelector('#sender-name').value.trim();
+			const senderAddress = document.querySelector('#sender-address').value.trim();
+			if (selectedTool !== 'url' && (senderName || senderAddress)) {
+				const sender = [senderName, senderAddress].filter(Boolean).join(' · ');
+				const context = document.createElement('p');
+				context.className = 'sender-context';
+				context.textContent = `Sender context: ${sender} (not included in score)`;
+				document.querySelector('#signal-list').append(context);
+			}
+			results.hidden = false;
+			sessionCheckCount += 1;
+		});
+
+		function classifyScamType(message, findings) {
+			const text = message.toLowerCase();
+			const has = (...terms) => terms.some((term) => text.includes(term));
+			const types = [
+				{ label: 'KYC / identity verification scam', terms: ['kyc', 'know your customer', 're-kyc', 'update your kyc', 'identity verification', 'verify your identity', 'identity documents'], note: 'The message mentions identity or KYC verification. Contact the bank or service through its official app or number to confirm.' },
+				{ label: 'Bank or financial account scam', terms: ['your bank', 'bank account', 'debit card', 'credit card', 'online banking', 'bank details', 'account balance', 'blocked account', 'suspended account'], note: 'The wording refers to a bank or financial account. This label is a clue, not proof that the named institution contacted you.' },
+				{ label: 'Delivery or parcel scam', terms: ['parcel', 'package', 'delivery', 'redelivery', 'shipment', 'tracking number', 'customs fee'], note: 'The message uses a delivery or parcel pretext. Check through the carrier’s official app or website.' },
+				{ label: 'Job or employment scam', terms: ['job offer', 'job opportunity', 'remote job', 'work from home', 'recruiter', 'hiring', 'interview', 'training fee'], note: 'The message appears to use a job or recruitment approach. Verify the role through the employer’s official careers page.' },
+				{ label: 'Tech-support scam', terms: ['tech support', 'technical support', 'device infected', 'computer infected', 'remote access', 'virus detected', 'microsoft support', 'apple support'], note: 'The message may be impersonating technical support. Don’t grant remote access or call numbers in unsolicited alerts.' },
+				{ label: 'Tax or government impersonation scam', terms: ['irs', 'tax department', 'tax refund', 'tax penalty', 'government agency', 'social security office', 'warrant for arrest'], note: 'The message may be impersonating a government or tax agency. Contact the agency using its official public contact details.' },
+				{ label: 'Prize or lottery scam', terms: ['you have won', 'you won', 'lottery', 'claim your prize', 'claim your reward', 'winner', 'prize fee'], note: 'The message uses a prize or lottery claim. Be cautious of requests to pay fees or provide details to claim an unexpected reward.' },
+				{ label: 'Investment or crypto scam', terms: ['guaranteed returns', 'investment opportunity', 'crypto investment', 'bitcoin investment', 'double your money', 'risk-free profit', 'trading profit'], note: 'The wording suggests an investment pitch. Guaranteed returns and pressure to transfer funds are major warning signs.' },
+				{ label: 'Romance or relationship scam', terms: ['send me money', 'emergency flight', 'gift cards for me', 'never met in person', 'online relationship', 'help with medical bills'], note: 'The message may involve a relationship-based money request. Verify independently and do not send money to someone you have not met or verified.' },
+				{ label: 'Payment or invoice scam', terms: ['invoice', 'payment overdue', 'pay a fee', 'gift card', 'wire transfer', 'payment required', 'refund fee', 'send money'], note: 'The message centers on a payment request. Check invoices and payment details directly with the organization using a known contact.' }
+			];
+			const match = types.find((type) => type.terms.some((term) => has(term)));
+			if (match) return { label: match.label, note: match.note };
+			if (findings.length) return { label: 'General phishing or suspicious message', note: 'Warning signs were detected, but the message does not clearly match a specific scam category.' };
+			return { label: 'No specific type identified', note: 'This is an estimate based on message wording, not a confirmed sender identity. No matching scam category was found.' };
+		}
+
+		function createMessageComparison(typeLabel) {
+			const examples = {
+				'KYC / identity verification scam': {
+					example: '“A reminder: please review your profile details in our official app when convenient. We will never ask you to send a password or one-time code by message.”',
+					explanation: 'The example removes threats and asks the customer to open a known app themselves. It does not request credentials in the message.'
+				},
+				'Bank or financial account scam': {
+					example: '“A new account notice is available. Sign in through your bank’s official app or use the phone number on your card if you have questions.”',
+					explanation: 'The example avoids an unexpected sign-in link and gives an independent way to reach the bank. It does not ask for a password or code.'
+				},
+				'Delivery or parcel scam': {
+					example: '“There is an update about your delivery. Check its status in the carrier app or by entering the tracking number on the carrier’s official website.”',
+					explanation: 'The example does not demand an immediate fee through a text link; it points the recipient to a channel they can open independently.'
+				},
+				'Job or employment scam': {
+					example: '“Thanks for your interest in the role. You can review the job description and application steps on our official careers page. There is no fee to apply.”',
+					explanation: 'The example gives a verifiable route to the employer and does not require upfront payment to apply or interview.'
+				},
+				'Tech-support scam': {
+					example: '“If you need technical help, open the support section in the product’s official app or website to start a request.”',
+					explanation: 'The example lets the customer initiate contact. It does not use a frightening pop-up or ask for remote access, passwords, or codes.'
+				},
+				'Tax or government impersonation scam': {
+					example: '“Information about your account is available through the agency’s official website. Visit it directly or contact the agency using its published public number.”',
+					explanation: 'The example avoids arrest threats and urgent payment demands. Government procedures vary, so confirm through the agency’s official contact details.'
+				},
+				'Prize or lottery scam': {
+					example: '“You can review contest results and claim instructions on the organizer’s official website. Check the rules before sharing any information.”',
+					explanation: 'The example avoids surprise fees and hidden claim links. Verify that you entered the contest and find the organizer independently.'
+				},
+				'Investment or crypto scam': {
+					example: '“Review the investment details, fees, and risks before deciding. Returns are not guaranteed; take time to verify the provider independently.”',
+					explanation: 'The example does not promise a profit or pressure the recipient to transfer money quickly.'
+				},
+				'Romance or relationship scam': {
+					example: '“I understand if you would rather not send money or personal details. Let’s keep talking without financial pressure.”',
+					explanation: 'The example respects boundaries and does not use affection, emergencies, or secrecy to obtain money.'
+				},
+				'Payment or invoice scam': {
+					example: '“A statement is ready to review. Please sign in through our official app or website, or contact our billing team using the number on a previous statement.”',
+					explanation: 'The example avoids gift cards, wire transfers, surprise payment links, and pressure to pay immediately.'
+				},
+				'General phishing or suspicious message': {
+					example: '“There is an update for you. When convenient, open the official app or website directly to review it. We will not ask you to send a password or one-time code by message.”',
+					explanation: 'This general example avoids urgency, embedded links, and requests for sensitive information.'
+				},
+				'No specific type identified': {
+					example: '“Your information is ready to review. When convenient, visit our official app or website directly if you have questions.”',
+					explanation: 'A calm tone alone does not prove a message is safe. Verify the sender independently if the message was unexpected.'
+				}
+			};
+			return examples[typeLabel] || examples['No specific type identified'];
+		}
+
+		function getUrlFindings(rawUrl, parsedUrl) {
+			const findings = [];
+			const hostname = parsedUrl.hostname.toLowerCase();
+			const authority = rawUrl.match(/^[a-z][a-z\d+.-]*:\/\/([^/?#]+)/i)?.[1] || rawUrl.split(/[/?#]/)[0];
+			const addFinding = (id, label, points, explanation, match) => findings.push({ id, label, points, explanation, matches: [match] });
+			if (parsedUrl.protocol !== 'https:') addFinding('http', 'No secure connection', 20, 'This URL does not use HTTPS. Avoid entering personal information on a site without a secure connection.', rawUrl);
+			if (authority.includes('@')) addFinding('at-sign', 'Misleading address format', 25, 'An @ sign in a URL can make the text before it look like the real website name.', '@');
+			if (/^xn--/.test(hostname) || hostname.includes('.xn--')) addFinding('punycode', 'Encoded domain name', 25, 'This domain uses encoded characters that can resemble letters from another alphabet.', hostname);
+			if (/^(?:\d{1,3}\.){3}\d{1,3}$/.test(hostname)) addFinding('ip-host', 'Direct IP address', 20, 'The address points directly to a numeric server instead of a familiar domain name.', hostname);
+			if (/(^|\.)(bit\.ly|tinyurl\.com|t\.co|is\.gd|cutt\.ly|rb\.gy)$/i.test(hostname)) addFinding('shortener', 'Shortened link', 15, 'A shortened link hides its final destination. Check the destination through a trusted source before opening it.', hostname);
+			if (hostname.split('.').length > 4) addFinding('subdomains', 'Many domain sections', 15, 'Several subdomains can make it harder to see which organization controls the actual domain.', hostname);
+			if ((hostname.match(/-/g) || []).length > 2) addFinding('hyphens', 'Unusual domain spelling', 10, 'Several hyphens in a domain can be used to imitate a familiar web address.', hostname);
+			return findings;
+		}
+
+		function renderHighlightedMessage(message, terms) {
+			const container = document.querySelector('#highlighted-message');
+			container.replaceChildren();
+			const uniqueTerms = [...new Set(terms)].sort((first, second) => second.length - first.length);
+			if (!uniqueTerms.length) {
+				container.textContent = message;
+				return;
+			}
+			const escapedTerms = uniqueTerms.map((term) => term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+			const matcher = new RegExp(escapedTerms.join('|'), 'gi');
+			let cursor = 0;
+			for (const match of message.matchAll(matcher)) {
+				const index = match.index;
+				if (index > cursor) container.append(document.createTextNode(message.slice(cursor, index)));
+				const mark = document.createElement('mark');
+				mark.textContent = match[0];
+				container.append(mark);
+				cursor = index + match[0].length;
+			}
+			container.append(document.createTextNode(message.slice(cursor)));
+		}
+
+		function renderSignals(findings) {
+			const list = document.querySelector('#signal-list');
+			list.replaceChildren();
+			if (!findings.length) {
+				const item = document.createElement('li');
+				item.className = 'empty-signal';
+				item.textContent = 'No common patterns matched. Stay alert with unexpected messages.';
+				list.append(item);
+				return;
+			}
+			for (const finding of findings) {
+				const item = document.createElement('li');
+				const title = document.createElement('strong');
+				title.textContent = finding.label;
+				const detail = document.createElement('span');
+				detail.textContent = `${finding.explanation} Matched: ${finding.matches.join(', ')}`;
+				item.append(title, detail);
+				list.append(item);
+			}
+		}
+
+		function renderDna(findings) {
+			const container = document.querySelector('#dna-list');
+			container.replaceChildren();
+			if (!findings.length) {
+				const note = document.createElement('p');
+				note.className = 'dna-empty';
+				note.textContent = 'No common ingredients detected this time.';
+				container.append(note);
+				return;
+			}
+			for (const finding of findings) {
+				const row = document.createElement('div');
+				row.className = 'dna-row';
+				const label = document.createElement('div');
+				label.className = 'dna-row-label';
+				const name = document.createElement('span');
+				name.textContent = finding.label;
+				const points = document.createElement('span');
+				points.textContent = `+${finding.points}`;
+				label.append(name, points);
+				const track = document.createElement('div');
+				track.className = 'dna-track';
+				const fill = document.createElement('span');
+				fill.style.width = `${Math.min(100, finding.points * 4)}%`;
+				track.append(fill);
+				row.append(label, track);
+				container.append(row);
+			}
+		}
+
+		document.querySelector('#clear-button').addEventListener('click', () => {
+			form.reset();
+			messageInput.dispatchEvent(new Event('input'));
+			document.querySelector('#url-error').hidden = true;
+			results.hidden = true;
+			(selectedTool === 'url' ? urlInput : messageInput).focus();
+		});
+	</script>
+</body>
+</html>
